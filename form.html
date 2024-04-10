@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <script src="./js/cadastrar.js" defer></script>
+    <title>EpicTask - Nova tarefa</title>
+  </head>
+
+  <body>
+    <h2>Cadastrar Treino</h2>
+    <form action="">
+      <div
+        style="background-color: #212529; padding: 1rem"
+        class="nes-field is-inline"
+      >
+        <label for="titulo" style="color: #fff">Tipo do Treino</label>
+        <input type="text" id="titulo" class="nes-input is-dark" />
+        <span id="titulo-error" class="nes-text is-warning"></span>
+      </div>
+
+      <div
+        style="background-color: #212529; padding: 1rem"
+        class="nes-field is-inline"
+      >
+        <label for="descricao" style="color: #fff">Descrição</label>
+        <textarea id="descricao" class="nes-textarea is-dark"></textarea>
+        <span id="descricao-error" class="nes-text is-warning"></span>
+      </div>
+
+      <div
+        style="background-color: #212529; padding: 1rem"
+        class="nes-field is-inline"
+      >
+        <label for="pontos" style="color: #fff">Dificuldade</label>
+        <input type="number" id="pontos" class="nes-input is-dark" />
+      </div>
+
+      <div>
+        <label for="">Com Aeróbico?</label>
+        <label>
+          <input type="radio" class="nes-radio" name="answer" checked />
+          <span>Yes</span>
+        </label>
+
+        <label>
+          <input type="radio" class="nes-radio" name="answer" />
+          <span>No</span>
+        </label>
+      </div>
+
+      <div class="botoes">
+        <a class="nes-btn" href="/">Cancelar</a>
+        <button id="botao-cadastrar" type="button" class="nes-btn is-warning">
+          Cadastrar
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
