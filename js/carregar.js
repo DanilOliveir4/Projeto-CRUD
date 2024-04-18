@@ -4,6 +4,7 @@ const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
 tarefas.forEach((tarefa) => {
   const card = document.createElement("div");
+  card.id = tarefa.titulo;
   card.classList.add("nes-container", "with-title", "is-centered");
 
   card.innerHTML = `<p class="title">${tarefa.titulo}</p>
@@ -16,7 +17,7 @@ tarefas.forEach((tarefa) => {
     
         <progress
         class="nes-progress"
-        value="50"
+        value="${tarefa.status}"
         max="100"
       ></progress>
     <!-- <details>
@@ -24,8 +25,10 @@ tarefas.forEach((tarefa) => {
                 <button type="button" class="nes-btn is-primary">-</button>
                 <button type="button" class="nes-btn is-primary">+</button>
     </details> -->
-    <button type="button" class="nes-btn is-error">Apagar</button>
-    <button type="button" class="nes-btn is-normal">-</button>
-    <button type="button" class="nes-btn is-normal">+</button>`;
+    <button onClick="apagar('${tarefa.titulo}')" type="button" class="nes-btn is-error">Apagar</button>
+    <button onClick="dec('${tarefa.titulo}')" type="button" class="nes-btn is-normal">-</button>
+    <button onClick="inc('${tarefa.titulo}')" type="button" class="nes-btn is-normal">+</button>`;
   document.querySelector("#lista-de-tarefas").appendChild(card);
 });
+
+atualizar()
